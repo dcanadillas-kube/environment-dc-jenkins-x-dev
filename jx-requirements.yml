@@ -4,7 +4,7 @@ cluster:
   project: ""
   provider: gke
   zone: ""
-gitops: false
+gitops: true
 environments:
 - key: dev
 - key: staging
@@ -17,15 +17,18 @@ ingress:
     enabled: false
     production: false
 kaniko: true
-secretStorage: local
+secretStorage: vault
 storage:
   logs:
-    enabled: false
+    enabled: true
     url: ""
   reports:
-    enabled: false
+    enabled: true
     url: ""
   repository:
-    enabled: false
+    enabled: true
     url: ""
+versionStream:
+  ref: master
+  url: https://github.com/cloudbees/cloudbees-jenkins-x-versions.git
 webhook: prow

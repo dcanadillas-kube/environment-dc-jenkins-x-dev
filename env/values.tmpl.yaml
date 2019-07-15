@@ -48,6 +48,13 @@ storage:
   repository:
     url: "{{ .Requirements.storage.repository.url }}"
 
+
+{{- if .Requirements.versionStream.url }}
+versionStream:
+  url: "{{ .Requirements.versionStream.url }}"
+  ref: "{{ .Requirements.versionStream.ref }}"
+{{- end }}
+
 expose:
   enabled: false
 

@@ -56,4 +56,8 @@ spec:
       classifier: reports
 {{- end }}
     useGitOps: true
+{{- if  .Values.versionStream.url }}
+    versionStreamUrl: {{ .Values.versionStream.url }}
+    versionStreamRef: {{ .Values.versionStream.ref }}
+{{- end }}
   webHookEngine: Prow

@@ -30,7 +30,7 @@ pipelineConfig:
                 command: jx
                 args: ['step','create','install', 'values', '-b']
               - name: boot-check-upgrades
-                dir: /workspace/source/env
+                dir: /workspace/source
                 command: jx
                 args: ['step','boot','upgrade']
               - name: install-vault

@@ -12,15 +12,22 @@ This repository contains the source code for [Jenkins X Boot configuration](http
 
 ### Run the new Jenkins X Bootstrap Pipeline
 
-Clone this git repository and make sure you have a recent `jx` binary:
+Create a fork of this git repository on github. We suggest renaming it to match the pattern `environment-<cluster name>-dev`. To rename your repository go to the repository settings in github. 
 
-From inside the git clone of this repository type:
+Clone your newly forked git repository:
+
+```
+git clone https://github.com/<org>/environment-<cluster name>-dev && cd environment-<cluster name>-dev
+```
+ 
+> It's important that you cd into your newly checked out git repo, otherwise `jx boot` will use the upstream Jenkins X boot
+configuration which differs from this one.
+
+Now, in the checkout, run:
 
 ``` 
 jx boot
-```
-
-If you are not in a clone of a boot git repository then `jx boot` will clone this repository and `cd` into the clone.
+``` 
 
 The bootstrap process runs the Jenkins X Pipeline in interpret mode as there's nothing running in your Kubernetes cluster yet and so there's no server side tekton controller until after we bootstrap.
 

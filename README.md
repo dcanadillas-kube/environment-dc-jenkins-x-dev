@@ -45,11 +45,11 @@ We have improved the support for value + secret composition via this [issue](htt
 
 ### Parameters file
 
-We define a [env/parameters.yaml](https://github.com/jstrachan/environment-simple-tekton/blob/master/env/parameters.yaml) file which defines all the parameters either checked in or loaded from Vault or a local file system secrets location.
+We define a [env/parameters.yaml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/env/parameters.yaml) file which defines all the parameters either checked in or loaded from Vault or a local file system secrets location.
 
 #### Injecting secrets into the parameters
 
-If you look at the current [env/parameters.yaml](https://github.com/jstrachan/environment-simple-tekton/blob/master/env/parameters.yaml) file you will see some values inlined and others use URIs of the form `local:my-cluster-folder/nameofSecret/key`. This currently supports 2 schemes:
+If you look at the current [env/parameters.yaml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/env/parameters.yaml) file you will see some values inlined and others use URIs of the form `local:my-cluster-folder/nameofSecret/key`. This currently supports 2 schemes:
 
 * `vault:` to load from a path + key from Vault
 * `local:` to load from a key in a YAML file at `~/.jx/localSecrets/$path.yml`
@@ -65,7 +65,7 @@ We can then use the new step to populate the `parameters.yaml` file via this com
 jx step create values --name parameters
 ```
 
-This uses the [parameters.schema.json](https://github.com/jstrachan/environment-simple-tekton/blob/master/env/parameters.schema.json) file which powers the UI.
+This uses the [parameters.schema.json](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/env/parameters.schema.json) file which powers the UI.
 
 So if you wanted to perform your own install from this git repo, just fork it, remove `env/parameters.yaml` and run the bootstrap command!
 

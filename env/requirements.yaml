@@ -7,7 +7,7 @@ dependencies:
   condition: prow.enabled
   name: prow
   repository: http://chartmuseum.jenkins-x.io
-  version: 0.0.925
+  version: 0.0.931
 - alias: lighthouse
   condition: lighthouse.enabled
   name: lighthouse

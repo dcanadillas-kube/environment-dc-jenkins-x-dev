@@ -41,12 +41,12 @@
     "gitProvider": {
       "type": "string",
       "title": "Select the git provider to use",
-      "const": "github",
+      "const": "github"
     },
     "enableDocker": {
       "type": "boolean",
-      "title": "Do you want to configure a Docker Registry?",
-      "description": "TODO"
+      "title": "Do you want to configure an external Docker Registry?",
+      "description": "By default Jenkins X will use the docker registry from the cloud provider. If you want to configure an external docker registry such as Docker Hub or your own existing docker registry enter Y"
     }
   },
   "allOf": [
@@ -72,18 +72,20 @@
               "url": {
                 "type": "string",
                 "title": "Docker Registry Url",
-                "default": "https://index.docker.io/v1/"
+                "default": "https://index.docker.io/v1/",
+                "description": "The URL of the external docker registry",
+                "format": "uri"
               },
               "username": {
                 "type": "string",
                 "title": "Docker Registry username",
-                "description": "TODO"
+                "description": "The username used to access the external docker registry"
               },
               "password": {
                 "type": "string",
                 "format": "password",
                 "title": "Docker Registry password",
-                "description": "TODO"
+                "description": "The password used to access the external docker registry"
               }
             }
           }

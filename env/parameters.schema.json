@@ -41,9 +41,7 @@
     "gitProvider": {
       "type": "string",
       "title": "Select the git provider to use",
-      "enum": [
-        "github"
-      ]
+      "const": "github",
     },
     "enableDocker": {
       "type": "boolean",

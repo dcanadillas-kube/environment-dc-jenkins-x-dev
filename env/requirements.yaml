@@ -1,17 +1,20 @@
 dependencies:
-- alias: tekton
-  name: tekton
-  repository: http://chartmuseum.jenkins-x.io
-  version: 0.0.39
-- alias: prow
-  condition: prow.enabled
-  name: prow
-  repository: http://chartmuseum.jenkins-x.io
-  version: 0.0.938
-- name: jenkins-x-platform
-  repository: http://chartmuseum.jenkins-x.io
-  version: 2.0.862
-- condition: external-dns.enabled
-  name: external-dns
-  repository: https://charts.bitnami.com/bitnami
-  version: 2.3.3
+  - alias: tekton
+    name: tekton
+    repository: http://chartmuseum.jenkins-x.io
+  - condition: prow.enabled
+    alias: prow
+    name: prow
+    repository: http://chartmuseum.jenkins-x.io
+  - condition: lighthouse.enabled
+    alias: lighthouse
+    name: lighthouse
+    repository: http://chartmuseum.jenkins-x.io
+  - name: jenkins-x-platform
+    repository: http://chartmuseum.jenkins-x.io
+  - condition: external-dns.enabled
+    name: external-dns
+    repository: https://charts.bitnami.com/bitnami
+#- condition: chartmuseum.enabled
+#  name: chartmuseum
+#  repository: http://chartmuseum.jenkins-x.io

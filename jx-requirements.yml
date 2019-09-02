@@ -29,6 +29,6 @@ storage:
     enabled: true
     url: ""
 versionStream:
-  ref: master
+  ref: 08f554ad1a5dd4047b3594c020405451feaf5078
   url: https://github.com/cloudbees/cloudbees-jenkins-x-versions.git
 webhook: prow

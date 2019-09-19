@@ -19,7 +19,8 @@ spec:
         spec:
           containers:
           - args:
-            - bu       
+            - boot 
+            - upgrade       
             command:
             - jx            
             image: docker.io/macox/jx:1.0.23

@@ -35,7 +35,7 @@ spec:
           securityContext: {}
           terminationGracePeriodSeconds: 30
           serviceAccountName: tekton-bot
-  successfulJobsHistoryLimit: 3
+  successfulJobsHistoryLimit: 2
   schedule: {{ .Values.autoUpdate.schedule | default "0 12 */5 * *" | quote }}
   suspend: false
 {{- end }}

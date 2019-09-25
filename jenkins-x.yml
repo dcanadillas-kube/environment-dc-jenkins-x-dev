@@ -69,8 +69,7 @@ pipelineConfig:
                 args: ['step','helm','apply', '--boot', '--remote', '--name', 'jenkins-x', '--provider-values-dir', '../kubeProviders']
               - name: verify-env
                 dir: /workspace/source
-                command: jx
-                args: ['step','verify','env']
+                command: if kubectl config current-context; then $(jx step verify env); else echo "Running in cluster, skipping"; fi
               - name: log-repos
                 dir: /workspace/source/repositories
                 command: echo

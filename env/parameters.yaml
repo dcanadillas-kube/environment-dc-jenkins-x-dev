@@ -1,0 +1,10 @@
+adminUser:
+  password: vault:dc-jenkins-x/adminUser:password
+  username: dcanadillas
+enableDocker: false
+pipelineUser:
+  email: dcanadillas@cloudbees.com
+  token: vault:dc-jenkins-x/pipelineUser:token
+  username: dcanadillas-kubecd
+prow:
+  hmacToken: vault:dc-jenkins-x/prow:hmacToken

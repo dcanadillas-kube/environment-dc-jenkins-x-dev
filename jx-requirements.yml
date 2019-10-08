@@ -1,17 +1,46 @@
 cluster:
-  clusterName: ""
-  environmentGitOwner: ""
-  project: ""
+  clusterName: dc-jenkins-x
+  environmentGitOwner: dcanadillas-kube
+  gitKind: github
+  gitName: github
+  gitServer: https://github.com
+  namespace: jx
+  project: emea-sa-demo
   provider: gke
-  zone: ""
-gitops: true
+  zone: europe-west1-c
 environments:
-- key: dev
-- key: staging
-- key: production
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: dev
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: staging
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: production
+gitops: true
 ingress:
-  domain: ""
+  domain: 34.76.200.253.nip.io
   externalDNS: false
+  namespaceSubDomain: -jx.
   tls:
     email: ""
     enabled: false
@@ -19,16 +48,20 @@ ingress:
 kaniko: true
 secretStorage: vault
 storage:
+  backup:
+    enabled: false
+    url: ""
   logs:
     enabled: true
-    url: ""
+    url: dc-jenkins-x-logs
   reports:
     enabled: true
-    url: ""
+    url: dc-jenkins-x-logs
   repository:
     enabled: true
-    url: ""
+    url: dc-jenkins-x-logs
+velero: {}
 versionStream:
-  ref: 224d65a9452e04c1f8eb33f2d87db2df03a46c4d 
+  ref: 224d65a9452e04c1f8eb33f2d87db2df03a46c4d
   url: https://github.com/cloudbees/cloudbees-jenkins-x-versions.git
 webhook: prow

@@ -6,9 +6,9 @@ metadata:
     jenkins.io/chart-repository: https://charts.cloudbees.com/cjxd/cloudbees
   creationTimestamp: null
   labels:
-    chart: jx-app-ui-0.0.59
+    chart: jx-app-ui-0.0.68
     jenkins.io/app-name: jx-app-ui
-    jenkins.io/app-version: 0.0.59
+    jenkins.io/app-version: 0.0.68
     jenkins.io/ui-resource: "true"
   name: jx-app-ui-jx-app-ui
 spec:
